@@ -8,10 +8,10 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/majortife/Jenkins-Flask-app.git'
-            }
+                git branch: 'main',
+                url: 'https://github.com/majortife/Jenkins-Flask-app.git'
+                 }
         }
-
         stage('Run Lint Test') {
             steps {
                 sh 'pip3 install --break-system-packages flake8'
