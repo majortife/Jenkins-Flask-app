@@ -1,81 +1,116 @@
-# 🎨 Flask Portfolio Web App
+# Flask Portfolio — Jenkins CI/CD Project
 
-This repository contains a modern, responsive **Flask-based web portfolio** project by [Shubham Gour Tech](https://www.youtube.com/shubhamgourtech).  
-It is built to showcase Flask web development with a professional DevOps-themed UI.
+A simple, responsive personal portfolio built with **Python, Flask, HTML, and CSS**.
 
----
+This project serves as a hands-on DevOps practice environment for implementing a CI/CD pipeline using Jenkins and Docker. The goal is to automate the process of building, testing, and deploying a containerized Flask application.
 
-<img width="1440" height="751" alt="Screenshot 2025-11-04 at 8 56 56 PM" src="https://github.com/user-attachments/assets/92bfa45f-0d2a-42b3-8767-24bdec967184" />
+## Features
 
-## 🚀 Features
+- Single-page personal portfolio
+- Responsive dark-themed interface
+- About Me, Technical Skills, and Contact sections
 - Flask-powered backend
-- Beautiful responsive dark neon UI
-- Sections: Hero, Who I Am, Life at Shubham Gour Tech, Playlists
-- Smooth animations and glowing theme
-- CI/CD ready with Docker and Jenkins
+- Docker containerization
+- Jenkins CI/CD integration
+- Docker image publishing to a container registry
 
----
+## Tech Stack
 
-## 🧠 Tech Stack
-- **Flask (Python)** — Backend Framework  
-- **HTML, CSS** — Frontend Design  
-- **Docker** — Containerization  
-- **Jenkins** — CI/CD Pipeline
+- **Python & Flask** — Web application
+- **HTML & CSS** — Frontend interface
+- **Git & GitHub** — Source code management
+- **Docker** — Application containerization
+- **Jenkins** — CI/CD automation
+- **Ubuntu WSL** — Local development environment
 
----
+## Project Structure
 
-## ⚙️ Run Locally
-```bash
-pip install -r requirements.txt
-python app.py
-```
-
-Then open [http://localhost:5000](http://localhost:5000)
-
----
-
-<img width="1440" height="809" alt="Screenshot 2025-11-04 at 8 59 37 PM" src="https://github.com/user-attachments/assets/18c958b8-e4b3-45ef-875b-75eccfe2f646" />
-
-
-## 🐳 Run with Docker
-```bash
-docker build -t theshubhamgour/flask-portfolio .
-docker run -p 5000:5000 theshubhamgour/flask-portfolio
-```
-
----
-<img width="1440" height="813" alt="Screenshot 2025-11-04 at 9 00 03 PM" src="https://github.com/user-attachments/assets/fbc73e3e-5141-4984-8820-d4be0848d536" />
-
-## 📁 Folder Structure
-```
+```text
 flask-portfolio/
-│
 ├── app.py
 ├── Dockerfile
 ├── Jenkinsfile
 ├── requirements.txt
 ├── README.md
-│
-├── templates/
-│   ├── base.html
-│   ├── index.html
-│   └── playlist.html
-│
-└── static/
-    ├── style.css
-    ├── favicon.ico
-    └── img/    # Add your photos here
+├── static/
+│   └── style.css
+└── templates/
+    └── index.html
 ```
 
----
+## Running the Application Locally
 
-## 👨‍💻 Author
-**Shubham Gour**  
-Release Engineer | DevOps | Cloud | YouTuber  
-🔗 [LinkedIn](https://www.linkedin.com/in/theshubhamgour/)  
-🎥 [YouTube](https://www.youtube.com/shubhamgourtech)
+Install the Python dependencies:
 
----
+```bash
+pip install -r requirements.txt
+```
 
-## 📜 License
-MIT License © 2025 Shubham Gour Tech
+Start the Flask application:
+
+```bash
+python3 app.py
+```
+
+Access the application at:
+
+http://localhost:5000
+
+## Running with Docker
+
+Build the Docker image:
+
+```bash
+docker build -t flask-portfolio .
+```
+
+Run the application container:
+
+```bash
+docker run -d --name flask-portfolio -p 5000:5000 flask-portfolio
+```
+
+Access the application at:
+
+http://localhost:5000
+
+To stop the container:
+
+```bash
+docker stop flask-portfolio
+```
+
+## Jenkins CI/CD Pipeline
+
+The project is intended to demonstrate an automated CI/CD workflow using Jenkins.
+
+The planned pipeline includes:
+
+1. **Source Checkout** — Retrieve application code from GitHub.
+2. **Build** — Build the Flask application's Docker image.
+3. **Test** — Execute application validation checks.
+4. **Push** — Publish the Docker image to a container registry.
+5. **Deploy** — Deploy the application to the configured environment.
+
+Jenkins runs locally in a Docker container, while Docker is used to package and run the Flask application.
+
+Pipeline implementation and deployment results will be documented after verification.
+
+## Author
+
+**Adeyeye Boluwatife**
+
+DevOps & Backend Engineering Enthusiast
+
+- GitHub: https://github.com/majortife
+- LinkedIn: Adeyeye Boluwatife
+
+## Acknowledgements
+
+This project was adapted from the [Flask Portfolio repository](https://github.com/theshubhamgour/flask-portfolio) by Shubham Gour Tech.
+
+The original application was simplified and personalized for hands-on Jenkins, Docker, and CI/CD practice.
+
+## License
+
+Refer to the original repository's license and attribution requirements.
