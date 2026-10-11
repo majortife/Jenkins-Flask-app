@@ -1,8 +1,8 @@
 pipeline {
     agent any
     environment {
-        DOCKERHUB_CREDENTIALS = credentials('DockerHub')
-        IMAGE_NAME = 'theshubhamgour/flask-portfolio'
+        DOCKERHUB_CREDENTIALS = credentials('Docker_access')
+        IMAGE_NAME = 'majortife/flask-portfolio-app'
     }
 
     stages {
@@ -36,7 +36,7 @@ pipeline {
 
         stage('Deploy to Stage') {
             steps {
-                sh 'docker run -d -p 5000:5000 $IMAGE_NAME:$BUILD_NUMBER'
+                sh 'docker run -d -p 5002:5000 $IMAGE_NAME:$BUILD_NUMBER'
             }
         }
     }
